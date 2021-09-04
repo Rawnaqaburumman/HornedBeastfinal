@@ -1,5 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Hornedbeast extends React.Component{
     constructor(props) {
@@ -14,8 +15,9 @@ class Hornedbeast extends React.Component{
     increasingCounter = () => {
         this.setState({
             favaretCounter:this.state.favaretCounter+1
-        })
-      
+        });
+
+        this.props.displayModel(this.props.title)
     }
     render(){
 
@@ -27,10 +29,10 @@ class Hornedbeast extends React.Component{
 
                 <div>
                 <Card >
-                  <Card.Img  variant="top" onClick = {this.increasingCounter}  src={this.props.image_url}alt={this.props.titel}  style={{height: "300px" ,width:"300px"}}/>
+                  <Card.Img  variant="top" onClick = {this.increasingCounter}  src={this.props.image_url}alt={this.props.titel}  style={{height: "250px" ,width:"250px"}}/>
                   <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Text >
                     {this.props.description}
                     </Card.Text>
                     

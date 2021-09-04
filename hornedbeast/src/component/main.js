@@ -1,6 +1,6 @@
 import React from "react";
-import data from '../assests/data';
 import Hornedbeast from './hornedbeast'
+import data from '../assests/data'
 class Main extends React.Component{
     render(){
 
@@ -16,6 +16,7 @@ class Main extends React.Component{
               image_url = {arrayOfData.image_url}
               keyword ={arrayOfData.keyword}
               horns = {arrayOfData.horns}
+              displayModel={this.props.displayModel}
           
             
         />
