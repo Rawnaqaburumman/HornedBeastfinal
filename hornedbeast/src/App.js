@@ -6,12 +6,14 @@ import Main from './component/main';
 import data from './assests/data';
 import SelectedBeast from './component/selectedbeast'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HornedForm from './component/hornedform';
 class App extends React.Component {
 
 
   constructor(props){
     super(props);
     this.state={
+      ArrOfAllObject: data,
       SelectedBeast:{},
       state:false,
       show:false
@@ -30,7 +32,12 @@ class App extends React.Component {
   handleClose= () =>{
     this.setState({show:false})
   }
-
+  UpdateData = (ArrOfAllObject) => {
+    console.log(ArrOfAllObject);
+    this.setState({
+      ArrOfAllObject: ArrOfAllObject
+    });
+  }
    
 
   
@@ -41,8 +48,10 @@ class App extends React.Component {
   return (
     <div className="App">
      <Header/>
-     <Main data={data}
+     <HornedForm UpdateData={this.UpdateData} />
+     <Main 
      displayModel={this.displayModel}
+     beasts={this.state.ArrOfAllObject}
   />
 <SelectedBeast
  SelectedBeast={this.state.SelectedBeast}

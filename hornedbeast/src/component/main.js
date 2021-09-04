@@ -1,12 +1,15 @@
 import React from "react";
 import Hornedbeast from './hornedbeast'
-import data from '../assests/data'
 class Main extends React.Component{
+
+
+
+  
     render(){
 
       return (
         <div>
-        {data.map((arrayOfData)=>{
+        {this.props.beasts.map((arrayOfData)=>{
 
         
          return (
@@ -17,7 +20,7 @@ class Main extends React.Component{
               keyword ={arrayOfData.keyword}
               horns = {arrayOfData.horns}
               displayModel={this.props.displayModel}
-          
+            
             
         />
         )
